@@ -1,11 +1,12 @@
 #!/bin/bash
 
 echo "Keybinds:"
-echo "p pause"
-exho "#9 add volume -2"
-exho "#/ add volume -2"
-exho "#0 add volume 2"
-exho "#* add volume 2"
+echo "		p pause"
+echo "		9 add volume -2"
+echo "		/ add volume -2"
+echo "		0 add volume 2"
+echo "		* add volume 2"
+echo ""
 
 while true; do
     echo "Select radio:"
