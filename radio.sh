@@ -9,7 +9,7 @@ echo "		9 add volume -2"
 echo "		/ add volume -2"
 echo "		0 add volume 2"
 echo "		* add volume 2"
-echo "                X exit for app"
+echo "		X exit for app"
 echo ""
 
 while true; do
