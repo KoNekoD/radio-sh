@@ -16,7 +16,7 @@ while true; do
     echo "Select radio:"
     printf "1. Anime [${RED}YggdrasilRadio${RESET}]\n"
     printf "2. Phonk [${RED}BadRadio${RESET}]\n"
-    printf "3. Phonk [${RED}RadioRecord.phonk${RESET}]\n"
+    printf "3. Phonk [${RED}Radiorecord.ru/station/phonk${RESET}]\n"
     printf "4. Anime [${RED}Anison.fm${RESET}]\n"
     printf "5. Brazil Phonk [${RED}Unknown${RESET}]\n"
     printf "6. Lofi [${RED}247OnlineRadio.com${RESET}]\n"
