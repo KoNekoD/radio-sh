@@ -3,6 +3,15 @@
 RED='\033[31m'
 RESET='\033[0m'
 
+COLUMN_SEPARATOR='\t'
+# shellcheck disable=SC2034
+read -r rows cols < <(stty size)
+if [ "$cols" -lt 100 ]; then
+  COLUMN_SEPARATOR="\n"
+else
+  COLUMN_SEPARATOR="\t"
+fi
+
 printf "Keybinds:"
 printf "\t %b 9 %b add volume -2" "$RED" "$RESET"
 printf "\t %b / %b add volume -2" "$RED" "$RESET"
@@ -13,30 +22,30 @@ printf "\t %b X %b exit for app\n\n" "$RED" "$RESET"
 
 while true; do
     echo "Select radio:"
-    printf "a1. Anime [%b YggdrasilRadio %b]\t" "$RED" "$RESET"
-    printf "a2. Phonk [%b BadRadio %b]\t" "$RED" "$RESET"
+    printf "a1. Anime [%b YggdrasilRadio %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "a2. Phonk [%b BadRadio %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "a3. Phonk [%b radiorecord.ru/station/phonk %b]\n" "$RED" "$RESET"
-    printf "a4. Anime [%b Anison.fm %b]\t" "$RED" "$RESET"
-    printf "a5. Brazil Phonk [%b Unknown %b]\t" "$RED" "$RESET"
+    printf "a4. Anime [%b Anison.fm %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "a5. Brazil Phonk [%b Unknown %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "a6. Lofi [%b 247OnlineRadio.com %b]\n\n" "$RED" "$RESET"
-    printf "b1. Chill: [%b Lofi Girl %b]\t" "$RED" "$RESET"
-    printf "b2. Chill: [%b Chillhop %b]\t" "$RED" "$RESET"
+    printf "b1. Chill: [%b Lofi Girl %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "b2. Chill: [%b Chillhop %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b3. Chill: [%b Box Lofi %b]\n" "$RED" "$RESET"
-    printf "b4. Chill: [%b The Bootleg Boy %b]\t" "$RED" "$RESET"
-    printf "b5. Chill: [%b Radio Spinner %b]\t" "$RED" "$RESET"
+    printf "b4. Chill: [%b The Bootleg Boy %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "b5. Chill: [%b Radio Spinner %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b6. Chill: [%b SmoothChill %b]\n" "$RED" "$RESET"
     printf "b7. Chill: [%b Boolout %b]\n" "$RED" "$RESET"
     printf "b8. Chill: [%b Radio Record Lo-Fi %b]\n\n" "$RED" "$RESET"
-    printf "b9. Anime: [%b BakaNo %b]\t" "$RED" "$RESET"
-    printf "b10. Anime: [%b Tsubaki %b]\t" "$RED" "$RESET"
+    printf "b9. Anime: [%b BakaNo %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "b10. Anime: [%b Tsubaki %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b11. Anime: [%b chiru.no %b]\n" "$RED" "$RESET"
-    printf "b12. Anime: [%b listen.moe %b]\t" "$RED" "$RESET"
+    printf "b12. Anime: [%b listen.moe %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b13. Anime: [%b r-a-d.io %b]\n\n" "$RED" "$RESET"
-    printf "b14. Chiptune: [%b Rainwave %b]\t" "$RED" "$RESET"
-    printf "b15. Classics: [%b Baroque %b]\t" "$RED" "$RESET"
+    printf "b14. Chiptune: [%b Rainwave %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "b15. Classics: [%b Baroque %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b16. Classics: [%b Neoclassical %b]\n" "$RED" "$RESET"
-    printf "b17. Vgm: [%b Kohina %b]\t" "$RED" "$RESET"
-    printf "b18. Vgm: [%b RPG Gamers %b]\t" "$RED" "$RESET"
+    printf "b17. Vgm: [%b Kohina %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
+    printf "b18. Vgm: [%b RPG Gamers %b]%b" "$RED" "$RESET" "$COLUMN_SEPARATOR"
     printf "b19. Vgm: [%b Rainwave %b]\n" "$RED" "$RESET"
     printf "b20. Vgm: [%b VGM Radio %b]\n" "$RED" "$RESET"
     printf "X. %b Exit %b for app\n" "$RED" "$RESET"
